@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+gem 'execjs' 
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,7 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -38,3 +39,17 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development , :test do 
+  gem "rspec-rails" 
+  gem "guard-rspec"
+  gem "launchy"
+end
+
+group :development do
+  gem "annotate"
+  gem "pry"
+end
+
+group :production do
+  gem "pg"
+end
