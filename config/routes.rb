@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root to: "staticpages#home"
+
+  match "/home", to: "staticpages#home" , :via => :get
+  match "/info", to: "staticpages#info", :via => :get
+  match "/contact", to: "staticpages#contact", :via => :get
+  resources :users 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
